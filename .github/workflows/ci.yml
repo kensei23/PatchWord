@@ -21,13 +21,13 @@ jobs:
       - run: chmod +x mvnw
       - run: ./mvnw -B test
 
-worker:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: worker
-    steps:
-      - uses: actions/checkout@v7
-      - run: python3 -m venv .venv
-      - run: .venv/bin/pip install -r requirements-dev.txt
-      - run: .venv/bin/pytest
+  worker:
+      runs-on: ubuntu-latest
+      defaults:
+        run:
+          working-directory: worker
+      steps:
+        - uses: actions/checkout@v7
+        - run: python3 -m venv .venv
+        - run: .venv/bin/pip install -r requirements-dev.txt
+        - run: .venv/bin/pytest
